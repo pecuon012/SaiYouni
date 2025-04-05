@@ -1,171 +1,277 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Xml.Schema;
+using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
-
-public class ForPractise : MonoBehaviour
+public class ForPractice : MonoBehaviour
 {
-    private void Start()
-    {
-        // Gọi từng bài tập để kiểm tra kết quả.
-        BaiTap1(); // In tất cả các phần tử trong mảng
-        BaiTap2(); // Tính tổng các phần tử trong mảng
-        BaiTap3(); // Tìm phần tử lớn nhất trong mảng
-        BaiTap4(); // Đếm số lượng số chẵn trong mảng
-        BaiTap5(); // In tất cả các chuỗi trong danh sách
-        BaiTap6(); // Tìm chuỗi dài nhất trong danh sách
-        BaiTap7(); // Tính tổng các số lẻ trong mảng
-        BaiTap8(); // In các số chẵn trong mảng
-        BaiTap9(); // Kiểm tra sự tồn tại của một phần tử trong mảng
-        BaiTap10(); // Đếm số phần tử âm trong mảng
-        BaiTap11(); // In các số lớn hơn 10 trong mảng
-        BaiTap12(); // Tìm chuỗi có độ dài ngắn nhất trong danh sách
-        BaiTap13(); // Nhân đôi tất cả các phần tử trong mảng
-        BaiTap14(); // Tìm số lớn thứ hai trong mảng
-        BaiTap15(); // Tìm chuỗi bắt đầu bằng chữ cái A
-        BaiTap16(); // Kiểm tra danh sách có chứa chuỗi "Hello" không
-        BaiTap17(); // In tất cả các phần tử âm trong mảng
-        BaiTap18(); // Đếm số lần xuất hiện của một phần tử trong mảng
-        BaiTap19(); // Tạo danh sách mới từ các phần tử lớn hơn 10
-        BaiTap20(); // In các chuỗi có độ dài lớn hơn 5 ký tự
-    }
+    [SerializeField] public int n_fibonacci; // [SerializeField] Cho phép chỉnh sửa trong Inspector nhưng vẫn là private
+    [SerializeField] public int sogiaithua;//13
+    [SerializeField] public int socanin;//bt14
+    [SerializeField] public int giatribbatky; //bt16
+    [SerializeField] public int sobatky; //bt17
 
-    // Bài Tập 1: In Tất Cả Các Phần Tử Trong Mảng
-    void BaiTap1()
-    {
-        // Tạo một mảng số nguyên
-        // Sử dụng foreach để in tất cả các phần tử trong mảng
-    }
 
-    // Bài Tập 2: Tính Tổng Các Phần Tử Trong Mảng
-    void BaiTap2()
-    {
-        // Tạo một mảng số nguyên
-        // Sử dụng foreach để tính tổng tất cả các phần tử trong mảng
-    }
 
-    // Bài Tập 3: Tìm Phần Tử Lớn Nhất Trong Mảng
-    void BaiTap3()
-    {
-        // Tạo một mảng số nguyên
-        // Sử dụng foreach để tìm phần tử lớn nhất trong mảng
-    }
 
-    // Bài Tập 4: Đếm Số Lượng Số Chẵn Trong Mảng
-    void BaiTap4()
+    //private void Reset()
+    //{
+    //    baitap13();
+    //}
+    // Start is called before the first frame update
+    void Start()
     {
-        // Tạo một mảng số nguyên
-        // Sử dụng foreach để đếm số lượng phần tử chẵn trong mảng
+        //baitap1();
+        //baitap2();
+        //baitap3();
+        //baitap4();
+        //baitap5();
+        //baitap6();
+        //baitap7();
+        //baitap8();
+        //baitap9();
+        //baitap10();
+        //baitap11();
+        //baitap12();
+        //baitap13();
+        //baitap14();
+        //baitap15();
+        //baitap16();
+        //baitap17();
+        //baitap18();
+        //baitap19();
+        baitap20();
     }
-
-    // Bài Tập 5: In Tất Cả Các Chuỗi Trong Danh Sách
-    void BaiTap5()
+    void baitap1()//Viết một chương trình sử dụng vòng lặp For để in các số từ 1 đến 100.
     {
-        // Tạo một danh sách các chuỗi
-        // Sử dụng foreach để in tất cả các chuỗi trong danh sách
+        for (int i = 1; i <= 100; i++)
+        {
+            Debug.Log(i);
+        }
     }
-
-    // Bài Tập 6: Tìm Chuỗi Dài Nhất Trong Danh Sách
-    void BaiTap6()
+    void baitap2()//Viết một chương trình sử dụng vòng lặp For để tính tổng các số từ 1 đến 50.
     {
-        // Tạo một danh sách các chuỗi
-        // Sử dụng foreach để tìm chuỗi dài nhất trong danh sách
+        int tong = 0;
+        for (int i = 1; i <= 50; i++)
+        {
+            tong += i;
+        }
+        Debug.Log("tong 1 den 50 la: " + tong);
     }
-
-    // Bài Tập 7: Tính Tổng Các Số Lẻ Trong Mảng
-    void BaiTap7()
+    void baitap3() //Viết một chương trình sử dụng vòng lặp For để in tất cả các số chẵn từ 1 đến 100.
     {
-        // Tạo một mảng số nguyên
-        // Sử dụng foreach để tính tổng tất cả các số lẻ trong mảng
+        for (int i = 1; i <= 100; i++)
+        {
+            if (i % 2 == 0)
+            {
+                Debug.Log(i);
+            }
+        }
     }
-
-    // Bài Tập 8: In Các Số Chẵn Trong Mảng
-    void BaiTap8()
+    void baitap4()//Viết một chương trình sử dụng vòng lặp For để tính tích của các số từ 1 đến 10.
     {
-        // Tạo một mảng số nguyên
-        // Sử dụng foreach để in tất cả các số chẵn trong mảng
+        int mutiplte = 1;
+        for (int i = 1; i <= 10; i++)
+        {
+
+            mutiplte *= i;
+
+        }
+        Debug.Log(mutiplte);
     }
-
-    // Bài Tập 9: Kiểm Tra Sự Tồn Tại Của Một Phần Tử Trong Mảng
-    void BaiTap9()
+    void baitap5()//Viết một chương trình sử dụng vòng lặp For để tìm số lớn nhất trong một mảng số nguyên
     {
-        // Tạo một mảng số nguyên và một phần tử cần kiểm tra
-        // Sử dụng foreach để kiểm tra xem phần tử đó có tồn tại trong mảng không
+        short[] mang_songuyen = { 0, 5, 8, 9, -7, 88, 1, 10, 2 }; // 9 pt
+        short max_value = mang_songuyen[0]; //gắn giá trị đầu tiên cho mảng
+        for (int i = 1; i < mang_songuyen.Length; i++) // i = 1 để bắt đầu so sánh mảng [0] với [1]
+        {
+            if (mang_songuyen[i] > max_value)
+            {
+                max_value = mang_songuyen[i];
+            }
+        }
+        Debug.Log("Số lớn nhất là: " + max_value);
     }
-
-    // Bài Tập 10: Đếm Số Phần Tử Âm Trong Mảng
-    void BaiTap10()
+    void baitap6()//Tính Tổng Các Số Lẻ Từ 1 Đến 100
     {
-        // Tạo một mảng số nguyên
-        // Sử dụng foreach để đếm số lượng các phần tử âm trong mảng
+        int total = 0;
+        for (int i = 1; i <= 100; i++)
+        {
+            if (i % 2 != 0)
+            {
+                total += i;
+            }
+        }
+        Debug.Log("Tổng Các Số Lẻ Từ 1 Đến 100: " + total);
     }
-
-    // Bài Tập 11: In Các Số Lớn Hơn 10 Trong Mảng
-    void BaiTap11()
+    void baitap7()//Đảo Ngược Chuỗi
     {
-        // Tạo một mảng số nguyên
-        // Sử dụng foreach để in các số lớn hơn 10 trong mảng
+        string[] name_user = { "Nguyen", "Van", "Tan" };
+        int dodaichuoi = name_user.Length; // độ dài đi từ 1 2 3 
+        for (int i = dodaichuoi - 1; i >= 0; i--) // mảng thì đi từ 0 nên trừ 1 mới hiểu 0 1 2 
+        {
+            Debug.Log(name_user[i]);
+        }
+        Debug.Log(name_user.Length);
     }
-
-    // Bài Tập 12: Tìm Chuỗi Có Độ Dài Ngắn Nhất Trong Danh Sách
-    void BaiTap12()
+    void baitap8()// In Ra Bảng Cửu Chương Viết một chương trình sử dụng vòng lặp For để in ra bảng cửu chương của một số bất kỳ(từ 1 đến 10).
     {
-        // Tạo một danh sách các chuỗi
-        // Sử dụng foreach để tìm chuỗi có độ dài ngắn nhất trong danh sách
+        int bangcuuchuong = 0;// Em sẽ in bảng cửu chương 5
+        for (int i = 1; i <= 10; i++)
+        {
+            bangcuuchuong = 5 * i;
+            Debug.Log(bangcuuchuong);
+        }
     }
-
-    // Bài Tập 13: Nhân Đôi Tất Cả Các Phần Tử Trong Mảng
-    void BaiTap13()
+    void baitap9()// Đếm Các Số Nguyên Dương Trong Mảng
     {
-        // Tạo một mảng số nguyên
-        // Sử dụng foreach để nhân đôi tất cả các phần tử trong mảng
+        int sodem = 0;
+        int[] mangsonguyen = { -2, 5, -6, 9, 7, 4, 0, 6 }; /// 8 phan tu
+        for (int i = 0; i < mangsonguyen.Length; i++)
+        {
+            if (mangsonguyen[i] >= 0) sodem++;
+        }
+        Debug.Log("mảng có " + sodem + " số nguyên dương" + mangsonguyen.Length);
+
     }
-
-    // Bài Tập 14: Tìm Số Lớn Thứ Hai Trong Mảng
-    void BaiTap14()
+    void baitap10()// In Tam Giác Số Viết một chương trình sử dụng vòng lặp For để in ra một tam giác số như sau: 1 12 123 1234 12345
     {
-        // Tạo một mảng số nguyên
-        // Sử dụng foreach để tìm phần tử lớn thứ hai trong mảng
+        int n = 5;
+        // Vòng lặp duyệt qua từng dòng
+        for (int i = 1; i <= n; i++)
+        {
+            // Vòng lặp để in các số từ 1 đến i
+            string line = "";
+            for (int j = 1; j <= i; j++)
+            {
+                line += j.ToString(); // Tạo chuỗi số noted nghĩa là chuyển số thành string xong chuyển số ( string ) vào chuỗi line và in ra line 
+            }
+            // In chuỗi lên console
+            Debug.Log(line);
+        }
     }
-
-    // Bài Tập 15: Tìm Chuỗi Bắt Đầu Bằng Chữ Cái A
-    void BaiTap15()
+    void baitap11()//Tìm Phần Tử Nhỏ Nhất Trong Mảng
     {
-        // Tạo một danh sách các chuỗi
-        // Sử dụng foreach để tìm và in các chuỗi bắt đầu bằng chữ cái 'A'
+        int[] mang_songuyen = { -2, 5, -6, -9, 7, 4, };
+        int min_value = 0;
+        for (int i = 0; i < mang_songuyen.Length; i++)
+        {
+            if (min_value > mang_songuyen[i]) min_value = mang_songuyen[i];
+        }
+        Debug.Log("so nho nhat trong mảng là: " + min_value);
     }
-
-    // Bài Tập 16: Kiểm Tra Xem Danh Sách Có Chứa Một Chuỗi Cụ Thể Không
-    void BaiTap16()
+    void baitap12()//Fibonacci 
     {
-        // Tạo một danh sách các chuỗi
-        // Sử dụng foreach để kiểm tra xem danh sách có chứa chuỗi "Hello" hay không
+        int a = 0;
+        int b = 1;
+
+        for (int i = 0; i <= n_fibonacci; i++)
+        {
+            Debug.Log(a);
+            int then = a + b;
+            a = b;
+            b = then;
+
+        }
     }
-
-    // Bài Tập 17: In Tất Cả Các Phần Tử Âm Trong Mảng
-    void BaiTap17()
+    void baitap13()//Viết chương trình tính giai thừa của số n 
     {
-        // Tạo một mảng số nguyên
-        // Sử dụng foreach để in ra tất cả các phần tử âm trong mảng
+        int total = 1;/// giai thừa từ 1
+        for (int i = 1; i <= sogiaithua; i++)
+        {
+            total *= i;
+        }
+        Debug.Log(total);
     }
-
-    // Bài Tập 18: Đếm Số Lần Xuất Hiện Của Một Phần Tử Trong Mảng
-    void BaiTap18()
+    void baitap14()//In Ra Các Số Nguyên Từ n Đến 1 Viết một chương trình sử dụng vòng lặp For để in ra các số nguyên từ n đến 1, với n là số nhập từ người dùng.
     {
-        // Tạo một mảng số nguyên và một phần tử cụ thể
-        // Sử dụng foreach để đếm số lần xuất hiện của phần tử cụ thể đó trong mảng
+        for (int i = socanin; i >= 1; i--)
+        {
+            Debug.Log(i);
+        }
     }
-
-    // Bài Tập 19: Tạo Một Danh Sách Mới Từ Các Phần Tử Lớn Hơn 10 Trong Mảng
-    void BaiTap19()
+    void baitap15()//Viết một chương trình sử dụng vòng lặp For để tính tổng các phần tử trong một mảng số nguyên.
     {
-        // Tạo một mảng số nguyên
-        // Sử dụng foreach để tạo một danh sách mới chứa các phần tử có giá trị lớn hơn 10
+        int total = 0;
+        int[] mang = { -9, -8, 6, 5, 4, };
+        for (int i = 0; i < mang.Length; i++)
+        {
+            total += mang[i];
+        }
+        Debug.Log(total);
     }
-
-    // Bài Tập 20: In Các Chuỗi Có Độ Dài Lớn Hơn 5 Ký Tự
-    void BaiTap20()
+    void baitap16()//Kiểm Tra Số Nguyên Tố Viết một chương trình sử dụng vòng lặp For để kiểm tra xem một số nguyên có phải là số nguyên tố hay không.
     {
-        // Tạo một danh sách các chuỗi
-        // Sử dụng foreach để in các chuỗi có độ dài lớn hơn 5 ký tự
+        bool kiemtra(int giatribbatky)
+        {
+            if (giatribbatky < 2) return false;
+
+            for (int i = 2; i <= Mathf.Sqrt(giatribbatky); i++)
+            {
+                if (giatribbatky % i == 0)
+                    return false;
+            }
+            return true;
+        }
+        if (kiemtra(giatribbatky) == true) Debug.Log("yes");
+        if (kiemtra(giatribbatky) == false) Debug.Log("no");
+    }
+    void baitap17()// Viết một chương trình sử dụng vòng lặp For để in ra các số từ 1 đến 100 chia hết cho 3.
+    {
+        for (int i = 1; i <= 100; i++)
+        {
+            if (i % 3 == 0)
+            {
+                Debug.Log(i);
+            }
+        }
+    }
+    void baitap18()//Tìm Tổng Các Số Chẵn Trong Mảng Viết một chương trình sử dụng vòng lặp For để tính tổng các phần tử chẵn trong một mảng số nguyên.
+    {
+        int[] mangsonguyen = { -6, -5, -4, 10, 20, -20, 2 }; // => = 2
+        int total = 0;
+        for (int i = 0; i < mangsonguyen.Length; i++)
+        {
+            if (mangsonguyen[i] % 2 == 0)
+            {
+                total += mangsonguyen[i];
+            }
+        }
+        Debug.Log(total);
+    }
+    void baitap19()//Viết một chương trình sử dụng vòng lặp For để tính trung bình cộng của các phần tử trong một mảng số nguyên.
+    {
+        int[] mangsonguyen = { -6, -5, -4, 10, 20, -20, 2 };
+        float total = 0;
+        float total_avg; // can so thuc
+        for (int i = 0; i < mangsonguyen.Length; i++)
+        {
+            total += mangsonguyen[i];
+        }
+        total_avg = total / mangsonguyen.Length;
+        Debug.Log(total_avg);
+    }
+    void baitap20()
+    {
+        string chuoi = "NGuyen Van Tan "; //4
+        int demKyTuHoa = 0;
+
+        for (int i = 0; i < chuoi.Length; i++)
+        {
+            if (char.IsUpper(chuoi[i])) // check ky tu chuoi 
+            {
+                demKyTuHoa++;
+            }
+        }
+                Debug.Log("Số ký tự hoa trong chuỗi là: " + demKyTuHoa);
     }
 }
+
+
+
+
+

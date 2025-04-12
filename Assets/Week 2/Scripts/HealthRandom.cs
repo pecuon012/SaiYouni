@@ -5,26 +5,31 @@ using UnityEngine.UI;
 
 public class HealthRandom : MonoBehaviour
 {
-    //----------------------Edit below here --------------------
-    public Slider slider;
-    public int maxHealth = 0;
-    public int minHealth = 100;
-    //----------------------Edit above here --------------------
-    public void Start()
-    {
-        slider.minValue = minHealth;
-        slider.maxValue = maxHealth;
-    }
 
+    
+    //----------------------Edit below here --------------------
+    public int maxHealth = 100;
+    public int minHealth = 0;
+    public int health = 0;
+
+    //----------------------Edit above here --------------------
     // On Click function
-    public void OnClick()
+    private void Awake()
     {
         RandomHealth();
     }
-
-    //----------------------Edit below here --------------------
+    public void Reset()
+    {
+        RandomHealth();
+    }
+    int tragiatri()
+    {
+        return health;
+    }
     public void RandomHealth()
     {
-
+        health = Random.Range(minHealth, maxHealth);
+        tragiatri();
     }
 }
+

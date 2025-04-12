@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     // 5 Enemies variables
-    int CurrentHp = 20; //variables 1
+    int CurrentHp5 = 20; //variables 1
     float head = 100f;  //variables 2
     bool Isdead = true; //variables 3 
     string monster_name = "jn"; //variables 4 
@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     // 5 Enemies methods
     public virtual int CurrentHp1() //Method 1
     {
-        return CurrentHp;
+        return CurrentHp5;
     }
     public virtual float GetMheadaxWeight2() //Method 2
     {

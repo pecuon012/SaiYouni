@@ -1,6 +1,42 @@
 # Agenda Phát Triển Game Week 2
 
 ## 1. Kể Tên 3 Hàm Màu Xanh (Blue) Mà Unity Sẽ Tự Động Gọi
+1. Start()
+Khi nào được gọi? Khi script được kích hoạt lần đầu, ngay trước frame đầu tiên.
+
+Dùng làm gì? Khởi tạo giá trị, set up mọi thứ trước khi game loop bắt đầu.
+
+Lưu ý: Không bị gọi nếu script bị disabled.
+
+2. Update()
+Khi nào được gọi? Mỗi frame trong suốt thời gian chạy game.
+
+Dùng làm gì? Bắt input, update animation, logic game liên tục.
+
+Lưu ý: Dùng nhiều thì... tiêu CPU đấy, tối ưu đi bro.
+
+3. OnEnable()
+Khi nào được gọi? Khi script được bật (enabled) hoặc đối tượng chứa nó được kích hoạt lại.
+
+Dùng làm gì? Reset trạng thái, đăng ký event listener các kiểu.
+
+Lưu ý: Cực kỳ useful khi xài pooling system.
+
+Bonus thêm 1 phát: Awake() cũng là callback được Unity gọi tự động trước cả Start(), hay dùng để thiết lập Singleton hoặc load resource.
+
+Tóm tắt quan trọng!
+***************
+Awake() → Khởi động cực sớm.
+
+OnEnable() → Kích hoạt.
+
+Start() → Setup sau khi đã bật.
+
+Update() → Làm việc liên tục.
+
+Đây là hàng auto-run của Unity, không gọi cũng tự động xuất hiện. Muốn hiểu cách Unity vận hành từ trong ra ngoài thì phải hiểu mấy callback kiểu này là căn bản nhất.
+
+Muốn tôi giải thích theo kiểu flow chạy của một scene trong Unity không? Vẽ sơ đồ hay kể như truyện cũng được luôn á.
 
 ## 2. Kể Tên 5 Loại Giải Thuật Sắp Xếp Khác Nhau => Sort.md
 

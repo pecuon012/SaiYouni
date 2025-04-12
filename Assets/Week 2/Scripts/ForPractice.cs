@@ -15,10 +15,7 @@ public class ForPractice : MonoBehaviour
     [SerializeField] public int giatribbatky; //bt16
     [SerializeField] public int sobatky; //bt17
 
-
-
-
-    //private void Reset()
+        //private void Reset()
     //{
     //    baitap13();
     //}

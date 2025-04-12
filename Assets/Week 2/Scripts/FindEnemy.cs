@@ -12,7 +12,7 @@ public class FindEnemy : MonoBehaviour // phải tạo thêm script class enemyH
 
     void Start()
     {
-        // Tìm t?t c? các Enemy là con c?a GameObject này (EnemyManager)
+        // Tìm tất cả các Enemy là con của GameObject này (EnemyManager)
         foreach (Transform child in transform)
         {
             EnemyHp enemy = child.GetComponent<EnemyHp>();
@@ -21,7 +21,7 @@ public class FindEnemy : MonoBehaviour // phải tạo thêm script class enemyH
                 // gán ngẫu nhiên biến
                 enemy.currentHP = Random.Range(0, 100);
 
-                // In ra ?? xem th?
+                // In ra xem obj
                 Debug.Log(child.name + " có gán HP: " + enemy.currentHP);
 
                 enemyList.Add(enemy);

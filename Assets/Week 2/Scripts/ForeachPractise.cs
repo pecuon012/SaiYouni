@@ -8,25 +8,25 @@ public class ForeachPractise : MonoBehaviour
     void Start()
     {
         // Gọi từng bài tập để kiểm tra kết quả.
-        BaiTap1(); // In tất cả các phần tử trong mảng
-        BaiTap2(); // Tính tổng các phần tử trong mảng
-        BaiTap3(); // Tìm phần tử lớn nhất trong mảng
-        BaiTap4(); // Đếm số lượng số chẵn trong mảng
-        BaiTap5(); // In tất cả các chuỗi trong danh sách
-        BaiTap6(); // Tìm chuỗi dài nhất trong danh sách
-        BaiTap7(); // Tính tổng các số lẻ trong mảng
-        BaiTap8(); // In các số chẵn trong mảng
-        BaiTap9(); // Kiểm tra sự tồn tại của một phần tử trong mảng
-        BaiTap10(); // Đếm số phần tử âm trong mảng
-        BaiTap11(); // In các số lớn hơn 10 trong mảng
-        BaiTap12(); // Tìm chuỗi có độ dài ngắn nhất trong danh sách
-        BaiTap13(); // Nhân đôi tất cả các phần tử trong mảng
-        BaiTap14(); // Tìm số lớn thứ hai trong mảng
-        BaiTap15(); // Tìm chuỗi bắt đầu bằng chữ cái A
-        BaiTap16(); // Kiểm tra danh sách có chứa chuỗi "Hello" không
-        BaiTap17(); // In tất cả các phần tử âm trong mảng
-        BaiTap18(); // Đếm số lần xuất hiện của một phần tử trong mảng
-        BaiTap19(); // Tạo danh sách mới từ các phần tử lớn hơn 10
+        //BaiTap1(); // In tất cả các phần tử trong mảng
+        //BaiTap2(); // Tính tổng các phần tử trong mảng
+        //BaiTap3(); // Tìm phần tử lớn nhất trong mảng
+        //BaiTap4(); // Đếm số lượng số chẵn trong mảng
+        //BaiTap5(); // In tất cả các chuỗi trong danh sách
+        //BaiTap6(); // Tìm chuỗi dài nhất trong danh sách
+        //BaiTap7(); // Tính tổng các số lẻ trong mảng
+        //BaiTap8(); // In các số chẵn trong mảng
+        //BaiTap9(); // Kiểm tra sự tồn tại của một phần tử trong mảng
+        //BaiTap10(); // Đếm số phần tử âm trong mảng
+        //BaiTap11(); // In các số lớn hơn 10 trong mảng
+        //BaiTap12(); // Tìm chuỗi có độ dài ngắn nhất trong danh sách
+        //BaiTap13(); // Nhân đôi tất cả các phần tử trong mảng
+        //BaiTap14(); // Tìm số lớn thứ hai trong mảng
+        //BaiTap15(); // Tìm chuỗi bắt đầu bằng chữ cái A
+        //BaiTap16(); // Kiểm tra danh sách có chứa chuỗi "Hello" không
+        //BaiTap17(); // In tất cả các phần tử âm trong mảng
+        //BaiTap18(); // Đếm số lần xuất hiện của một phần tử trong mảng
+        //BaiTap19(); // Tạo danh sách mới từ các phần tử lớn hơn 10
         BaiTap20(); // In các chuỗi có độ dài lớn hơn 5 ký tự
     }
 

@@ -73,7 +73,7 @@ public class IfStatementPractise : MonoBehaviour
     // Bài Tập 4: Tìm Số Lớn Nhất Trong Hai Số
     void BaiTap4()
     {
-        float max = 0;
+        //float max = 0;
         if (a > b) Debug.Log(" So lon nhat la " + a);
         if (b > a) Debug.Log(" So lon nhat la " + b);
         else Debug.Log(" a = b ");

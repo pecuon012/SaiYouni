@@ -1,34 +1,71 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.EventSystems;
+
 
 public class Nearby : MonoBehaviour
 {
+    [SerializeField] protected Transform target;
+    [SerializeField] protected Transform target2;
+    [SerializeField] protected NavMeshAgent agent;
+    [SerializeField] protected Animator animator;
+    [SerializeField] protected float distance;
+    [SerializeField] protected float distanceAgent;
+    [SerializeField] protected float distance2;
+    [SerializeField] protected float stopdistance = 2;
+    [SerializeField] protected bool isWalking;
+    [SerializeField] protected bool idle;
     // Start is called before the first frame update
-    void Start()
+
+    void FixedUpdate()
     {
-        // Gọi từng bài tập để kiểm tra kết quả.
-        BaiTap1(); // Tìm kẻ địch gần nhất
-        BaiTap2(); // Tìm vật phẩm gần nhất
+        MovetoTarget();
+        UpdateAnimator();
+    }
+    void UpdateAnimator()
+    {
+        isWalking = !agent.isStopped;
+        animator.SetBool("IsWalking", isWalking);
+
     }
 
-    // Bài Tập 1: Tìm Kẻ Địch Gần Nhất
-    void BaiTap1()
+    protected virtual void MovetoTarget()
     {
-        // Tạo danh sách các kẻ địch với tọa độ (x, y, z) trong không gian 3D
-        // Vị trí của người chơi được cung cấp
-        // Sử dụng công thức khoảng cách Euclid hoặc Vector3.Distance() để tính khoảng cách
-        // So sánh khoảng cách và tìm kẻ địch gần nhất
-        // Trả về thông tin của kẻ địch gần nhất
-    }
+        Vector3 position = target.position; // vị trí worldspace
+        distance = Vector3.Distance(transform.position, target.position);
+        Vector3 position2 = target2.position; // vị trí worldspace
+        distance2 = Vector3.Distance(transform.position, target2.position);
+        distanceAgent = agent.remainingDistance;
+        if (stopdistance <= distance2)
+        {
+            if (distance > distance2)
+            {
+                agent.isStopped = false;
+                agent.SetDestination(position2);
+                Debug.Log("Target2 gan hon" + " ID: " + transform.position);
 
-    // Bài Tập 2: Tìm Vật Phẩm Gần Nhất
-    void BaiTap2()
-    {
-        // Tạo danh sách các vật phẩm với tọa độ (x, y) trong không gian 2D
-        // Vị trí của người chơi được cung cấp
-        // Tính khoảng cách từ người chơi đến từng vật phẩm
-        // So sánh để tìm vật phẩm gần nhất
-        // Trả về thông tin của vật phẩm gần nhất
+            }
+        }
+        else
+            agent.isStopped = true;
+        if (stopdistance <= distance)
+        {
+            if (distance < distance2)
+            {
+                agent.isStopped = false;
+                agent.SetDestination(position);
+                Debug.Log("Target1 gan hon" + " ID: " + transform.position);
+            }
+        }
+        else
+            agent.isStopped = true;
+
     }
+   
 }
+
+
+
+
